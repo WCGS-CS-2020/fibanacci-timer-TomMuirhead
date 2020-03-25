@@ -37,9 +37,16 @@ class MainClass {
 
     int fib = 0;
 
-    //
-    // Insert your code here
-    //
+    fib = fibadd(x-2) + fibadd(x-1);
+    
+    static int fibadd(int x)
+    {
+      if (x==1)
+        return 0;
+      else if (x==2)
+        return 1;
+      return fibadd(x-2) + fibadd(x-1)
+    }
     
     if (print == true)
       Console.Write ("Fibanacci = {0}\n", fib);
@@ -57,10 +64,10 @@ class MainClass {
     fiblist [0] = 0;
     fiblist [1] = 1;
     
-    //
-    // Insert your code here
-    //
-
+    for (int i = 2; i < x; i++)
+    {
+      fiblist[i] = fiblist[i-2] + fiblist[i-1];
+    }
   
     if (print == true)
       Console.Write ("Fibanacci = {0}\n", fiblist[x-1]);
